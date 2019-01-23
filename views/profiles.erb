@@ -1,13 +1,28 @@
 
-<div class="profile">
-<h6>First Name:<%= @user.first_name%></h6><br>
-<h6>Username:<%= @user.username%></h6>
+<div class="mypage">
 <ul>
-<%@user.posts.each do |post|%>
-<li><%=post.title%></li>
-    <ul>
-<li><%=post.content%></li>
-    </ul>
-<% end %>
+    <li class="me">My name is:   <%=@user.first_name%><%=" "%><%=@user.last_name%></li>
+    <li class="me">My username is:   <%=@user.username%>
+    <li class="me">Contact me at:   <%=@user.email%></li>
+    <li class="me">I was born on:   <%=@user.birthday%></li>
 </ul>
 </div>
+
+<center>
+<ul>
+<%@userposts.each do |post|%>
+    <%if post.image_url?%>
+    <div class="postbox">
+        <li>Title:  <%=post.title%></li>
+        <li>Content:  <%=post.content%></li>
+        <img class="postpic" src="<%=post.image_url%>" height="150px" width="150px">
+       </div>
+       <%else%>
+        <div class="postbox">
+        <li>Title:  <%=post.title%></li>
+        <li>Content:  <%=post.content%></li>
+        </div>
+    <%end%>
+<% end %>
+</ul>
+</center>

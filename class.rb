@@ -24,4 +24,6 @@ class Adventures
         @thrill
     end
 end
+
+
     

@@ -107,7 +107,8 @@ end
 
 get "/blog" do
 
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').limit(20)
+    
 
     erb :blog
 
@@ -117,6 +118,7 @@ post "/admin" do
  post = Post.create(
      title: params[:title],
      content: params[:content],
+     image_url: params[:image_url],
      user_id: current_user.id
      
  )
@@ -129,7 +131,11 @@ post "/admin" do
  get "/profiles" do
 
     @user = User.find_by(username: params[:username])
+    
+
     if @user
+        @userposts = @user.posts.order('created_at DESC').limit(20)
+
 
         erb :profiles
     else
@@ -174,12 +180,4 @@ get '/account' do
     flash[:delete] = 'your account has been deleted'
   end
 
-#   get "/delete_account/:id" do
 
-#     @user = User.find(session[:user_id])
-#     User.destroy(session[:user_id])
-    
-#     session[:user_id] = nil
-   
-#     redirect "/destroy"
-#    end

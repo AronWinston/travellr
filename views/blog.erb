@@ -1,13 +1,29 @@
 <h3>Select ADMIN tab to create a new comment</h3>
 
- <ul>
+ 
+<center>
 
+<ul>
 <% @posts.each do |post| %> 
+  
+<% if post.image_url?%>
+  
+  <div class="postbox">
+    <li>Title: <%= post.title %></li>
+    <li>Content: <%= post.content%></li>
+    <img class="postpic" src="<%=post.image_url%>" height="150px" width="150px">
+  
+  </div>
 
-  <li>
-    Title: <%= post.title %><br />
-    Content: <%= post.content%><br /> 
-    
-  </li>
+  <%else%>
+  <div class="postbox">
+  
+    <li>Title: <%= post.title %></li>
+    <li>Content: <%= post.content%></li>
+  </div>
+<%end%>
+
 <% end %>
 </ul> 
+</center>
+
