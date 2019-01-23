@@ -1,0 +1,26 @@
+<h1>Congratulations...you are now logged in</h1>
+
+
+
+<div class="userposts">
+<p>Feel free to add your thoughts to our blog</p>
+<form action="/admin" method="POST">
+<input type="text" name="title" placeholder="enter title">
+<input type="text" name="content" placeholder="write post">
+<input type="submit" value="Post">
+</form>
+</div>
+
+<div class="emptyspace">
+</div>
+
+
+<div class="searchusers">
+<p>Search for users below.</p>
+<form action="/profiles" method="GET">
+<input type="text" name="username" placeholder="search user">
+<input type="submit" value="Go">
+</form>
+</div>
+
+<%=flash[:error2]%>

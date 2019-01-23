@@ -1,0 +1,12 @@
+<center>
+<div class="delete">
+<h2>Delete your account by clicking the button below</h2>
+<h4><strong><em>This action cannot be reversed!</em></strong></h4>
+
+<form action="/user/:id" method="post">
+  <center><input type="submit" name="_method" value="delete"></center>
+</form>
+</div>
+</center>
+
+<%=flash[:delete]%>

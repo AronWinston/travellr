@@ -1,0 +1,16 @@
+<h2 class="awesome">Awesome Activities</h3>
+
+<div class="thrill">
+
+<ul>
+<%@activities.each do |a|%>
+
+<li class="sport"><%=a.activity%></li>
+<img src="<%=a.image%>" width="400px" height="250px">
+
+<li><%=a.price%></li>
+<li><%=a.thrill%></li>
+
+<%end%>
+</ul>
+</div>

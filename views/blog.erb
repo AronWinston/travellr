@@ -1,0 +1,13 @@
+<h3>Select ADMIN tab to create a new comment</h3>
+
+ <ul>
+
+<% @posts.each do |post| %> 
+
+  <li>
+    Title: <%= post.title %><br />
+    Content: <%= post.content%><br /> 
+    
+  </li>
+<% end %>
+</ul> 

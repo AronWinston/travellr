@@ -1,0 +1,13 @@
+
+<div class="profile">
+<h6>First Name:<%= @user.first_name%></h6><br>
+<h6>Username:<%= @user.username%></h6>
+<ul>
+<%@user.posts.each do |post|%>
+<li><%=post.title%></li>
+    <ul>
+<li><%=post.content%></li>
+    </ul>
+<% end %>
+</ul>
+</div>
