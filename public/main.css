@@ -101,6 +101,10 @@ padding: 5px;
 
 .story {
   display: flex;
+  justify-content: center;
+  font-family: 'Charm', cursive;
+  font-size: 3em;
+  margin: 15px;
 }
 
 .sport{
