@@ -9,6 +9,7 @@
 <% if post.image_url?%>
   
   <div class="postbox">
+    <li>Username: <%=post.user.username%></li>
     <li>Title: <%= post.title %></li>
     <li>Content: <%= post.content%></li>
     <img class="postpic" src="<%=post.image_url%>" height="150px" width="150px">
@@ -17,7 +18,7 @@
 
   <%else%>
   <div class="postbox">
-  
+    <li>Username: <%=post.user.username%></li>
     <li>Title: <%= post.title %></li>
     <li>Content: <%= post.content%></li>
   </div>
