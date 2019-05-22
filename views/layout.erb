@@ -12,27 +12,55 @@
 <body>
 <h1 class="local"><img class="palm" src="https://previews.123rf.com/images/vectorplus/vectorplus1709/vectorplus170900246/86854998-palm-tree-vector-icon-black-illustration-isolated-on-white-background-for-graphic-and-web-design-.jpg" height="100px" width="100px">
 Local Living<img class="palm" src="https://previews.123rf.com/images/vectorplus/vectorplus1709/vectorplus170900246/86854998-palm-tree-vector-icon-black-illustration-isolated-on-white-background-for-graphic-and-web-design-.jpg" height="100px" width="100px"></h1>
-<nav class="navi">
-<li class="list"><a href="/">HOME</a></li>
-<li class="list"><a href="/locations">LOCATIONS</a></li>
-<li class="list"><a href="/excursions">ADVENTURES</a></li>
-<li class="list"><a href="/about">ABOUT</a></li>
-
-<%if session[:user_id]%>
-<li class="list"><a href="/myprofile">PROFILE</a></li>
-<li class="list"><a href="/admin">ADMIN</a></li>
-<li class="list"><a href="/blog">BLOG</a></li>
-<li class="list"><a href="/users">USERS</a></li>
-<li class="list"><a href="/account">ACCOUNT</a></li>
-<li class="list"><a href="/signout">SIGN OUT</a></li>
 
 
-<%else%>
 
-
-<li class="list"><a href="/signup">SIGN UP</a></li>
-<li class="list"><a href="/signin">SIGN IN</a></li>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">HOME</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">ABOUT <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/locations">LOCATIONS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/excursions">ADVENTURES</a>
+      </li>
+    <%if session[:user_id]%>
+     <li class="nav-item">
+        <a class="nav-link" href="/myprofile">PROFILE</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin">ADMIN</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/users">USERS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/account">SETTINGS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/signout">LOG OFF</a>
+        </li>
+    <%else%>
+        <li class="nav-item">
+            <a class="nav-link" href="/signup">SIGN UP</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/signin">SIGN IN</a>
+        </li>
+    
+    
+    </ul>
+  </div>
 <% end %>
 </nav>
 
